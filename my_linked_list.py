@@ -9,12 +9,15 @@ class MyNode:
 
     # Instance variables
     value = 0
-    next = None
+    next = None # "Next what?" I'd name it nextNode
 
+	# Try putting each input parameter on a separate line
+	# (May not be valid Python syntax)
     def __init__(self, value=0):
         """Initialize the node."""
         self.value = value
 
+	# Same as above
     def set_value(self, value):
         """Set value of current node."""
         self.value = value
@@ -23,10 +26,13 @@ class MyNode:
         """Return value of node."""
         return self.value
 
+	# Change the method name to reflect the change of the variable name
+	# (set_next_node)
     def set_next(self, new_node):
         """Set next node."""
         self.next = new_node
 
+	# Same as above
     def get_next(self):
         """Move to next node."""
         return self.next
@@ -38,25 +44,51 @@ class MyLinkedList:
     first_node = None
     last_node = None
 
+	# Again, try giving each input parameter its own line
+	# Also, lists can be empty, so there's no need to pass an initial value
     def __init__(self, value):
         """Initialize the linked list."""
-        self.node = MyNode(value)
-        self.first_node = self.node
-        self.last_node = self.node
+        self.node = MyNode(value)	# Set this to None so this list starts empty.
+									# I'm not sure a linked list needs a permanant
+									# pointer to a given node.
+									# If you decide self.node is necessary, rename to something
+									# more descriptive like 'self.current_node_in_use'.
+        self.first_node = self.node	# self.first_node
+        self.last_node = self.node	# self.last_node
+		# Not sure if you need to set instance variables in Python to None.
+		# It might happen by default. Either way, it may be good to set them to None
+		# to let people know it was intentional.
 
 # delete_by_value (delete_first_by_value, delete_all_by_value)
 
     def print_list(self):
         """Prints the contents of the linked list."""
-        temp_node = self.first_node
+        temp_node = self.first_node # I don't like naming variables 'temp_{name}'.
+									# Perhaps name it 'current_node'?
 
         while True:
             print(temp_node.get_value())
-            if temp_node.next:
+            if temp_node.next:	# Use temp_node.get_next() rather than next.
+								# Either works because Python has no enforced concept of
+								# private variables, but the instance fields (value and next)
+								# of a node should be private, thus not accessible to outsiders
+								# like this method. Node.get_next() exists to give us access to this
+								# 'private' variable;
                 temp_node = temp_node.get_next()
+								# If you make the previous change, this line will call the get_next()
+								# method twice. We don't want to do redundant work. I recommend replacing
+								# this entire while-loop with the following:
+								#		
+								#		while temp_node
+								#			print(temp_node.get_value())
+								#			temp_node = temp_node.get_next()
+								#
+								# In my opinion while (true) should often be avoided. Rather than calling
+								# break conditionally, use that condition as the while-loop's condition.
             else:
                 break
 
+	# If it works with Python's syntax, put each parameter on a different line.
     def add(self, value):
         """Adds a new node to the end of the linked list."""
         new_node = MyNode(value)
@@ -69,9 +101,22 @@ class MyLinkedList:
         temp_node = self.first_node
         run_loop = True
 
-        while run_loop:
-            size += 1
-            if temp_node.next:
+        while run_loop: # This is a perfect example of using a condition to terminate a while loop!
+						# Keep doing this! :D
+						#
+						# If there is no first_node, this will break.
+						#
+						# You could improve upon this by giving the condition a context-based name.
+						# Every while-loop could be given the condition 'run_loop'. When do we run_loop
+						# this loop in particular?
+						#
+						#		temp_node_is_not_null = temp_node # This boolean is added only for clarity
+						#		while (temp_node_is_not_null):
+						#			size += 1
+						#			temp_node = temp_node.get_next()
+						#			temp_node_is_not_null = temp_node
+            size += 1 # Does Python let you say 'size++' instead of 'size += 1'?
+            if temp_node.next: # temp_node.get_next()
                 temp_node = temp_node.get_next()
             else:
                 run_loop = False

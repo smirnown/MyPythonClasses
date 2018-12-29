@@ -247,4 +247,3 @@ class MyLinkedList:
         """Deletes all nodes with the specified value."""
         while self.exists(value_to_be_deleted):
                 self.delete_first_occurrence_of_value(value_to_be_deleted)
-

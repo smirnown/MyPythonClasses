@@ -1,4 +1,4 @@
-"""This module contains my custom doubly linked list class."""
+"""This module contains my custom doubly linked list and double node classes."""
 
 
 class MyDoubleNode:
@@ -96,13 +96,13 @@ class MyDoublyLinkedList:
             self
     ):
         """Returns the size of the linked_list."""
-        size = 0
+        size_of_list = 0
         temp_node = self.first_node
 
         while temp_node is not None:
-            size += 1
+            size_of_list += 1
             temp_node = temp_node.get_next_node()
-        return size
+        return size_of_list
 
     def get_node(
             self,
@@ -111,6 +111,11 @@ class MyDoublyLinkedList:
         """Returns the node at the specified index."""
         i = 0
         current_node = self.first_node
+        index_exceeds_number_of_elements_in_list = index >= self.size()
+
+        if index_exceeds_number_of_elements_in_list:
+            print("The specified index exceeds the number of elements in this list.")
+            return None
 
         while i < index:
             current_node = current_node.get_next_node()
@@ -130,9 +135,14 @@ class MyDoublyLinkedList:
             new_node
     ):
         """Inserts a new node at the beginning of a doubly linked list."""
-        new_node.set_next_node(self.first_node)
-        self.first_node.set_previous_node(new_node)
-        self.first_node = new_node
+        list_is_empty = self.size() == 0
+
+        if list_is_empty:
+            self.add(new_node.get_value())
+        else:
+            new_node.set_next_node(self.first_node)
+            self.first_node.set_previous_node(new_node)
+            self.first_node = new_node
 
     def __insert_node_in_middle(
             self,
@@ -147,16 +157,6 @@ class MyDoublyLinkedList:
         new_node.set_next_node(node_after_inserted_node)
         new_node.set_previous_node(node_before_inserted_node)
         node_after_inserted_node.set_previous_node(new_node)
-
-    def __insert_node_at_end(
-            self,
-            new_node
-    ):
-        """Inserts a node at the end of a doubly linked list and updates 'last_node'."""
-        self.last_node.set_next_node(new_node)
-        new_node.set_previous_node(self.last_node)
-        self.last_node = new_node
-
 
     def insert(
             self,
@@ -175,9 +175,9 @@ class MyDoublyLinkedList:
         elif inserting_node_in_middle_of_list:
             self.__insert_node_in_middle(new_node, index)
         elif inserting_node_at_end_of_list:
-            self.__insert_node_at_end(new_node)
+            self.add(value)
         else:
-            print("There is no node of index " + str(index))
+            print("The index specified is out of range.")
 
     def exists(
             self,
@@ -197,8 +197,14 @@ class MyDoublyLinkedList:
             self
     ):
         """Deletes the first node in the doubly linked list."""
-        self.first_node = self.get_node(1)
-        self.first_node.set_previous_node(None)
+        list_is_size_1 = self.size() == 1
+
+        if list_is_size_1:
+            self.first_node = None
+            self.last_node = None
+        else:
+            self.first_node = self.get_node(1)
+            self.first_node.set_previous_node(None)
 
     def __delete_node_in_middle(
             self,
@@ -237,7 +243,7 @@ class MyDoublyLinkedList:
         elif deleting_last_node:
             self.__delete_last_node()
         else:
-            print("There is no node of index " + str(index))
+            print("The index specified is out of range.")
 
     def delete_first_occurrence_of_value(
             self,

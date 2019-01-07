@@ -1,71 +1,29 @@
-"""
-This module contains my custom linked list classes:
-Nodes, linked lists, doubly-linked lists, circular linked lists, and doubly-circular linked lists.
-"""
+"""This module contains my custom circular doubly linked list class."""
+
+from my_doubly_linked_list import MyDoubleNode
 
 
-class MyNode:
-    """This is my attempt to code a node for use in linked lists."""
-
-    # Instance variables
-    value = 0
-    next_node = None
-
-    def __init__(
-            self,
-            value=0
-    ):
-        """Initialize the node."""
-        self.value = value
-        self.next_node = None
-
-    def set_value(
-            self,
-            value
-    ):
-        """Set value of current node."""
-        self.value = value
-
-    def get_value(
-            self
-    ):
-        """Return value of node."""
-        return self.value
-
-    def set_next_node(
-            self,
-            new_node
-    ):
-        """Set next node."""
-        self.next_node = new_node
-
-    def get_next_node(
-            self
-    ):
-        """Move to next node."""
-        return self.next_node
-
-
-class MyLinkedList:
-    """"This is my attempt to code a linked list."""
-
-    first_node = None
-    last_node = None
+class MyCircularDoublyLinkedList:
+    """"This is my attempt to code a circular doubly linked list."""
 
     def __init__(
             self,
     ):
-        """Initialize the linked list."""
+        """Initialize the circular doubly linked list."""
         self.first_node = None
         self.last_node = None
 
     def print_list(
             self
     ):
-        """Prints the contents of the linked list."""
+        """Prints the contents of the circular doubly linked list."""
         current_node = self.first_node
+        printing_contents_of_loop = True
 
-        while current_node:
+        while printing_contents_of_loop:
+            if current_node == self.last_node:
+                printing_contents_of_loop = False
+
             print(current_node.get_value())
             current_node = current_node.get_next_node()
 
@@ -73,28 +31,38 @@ class MyLinkedList:
             self,
             value
     ):
-        """Adds a new node to the end of the linked list."""
-        new_node = MyNode(value)
+        """Adds a new node to the end of the circular doubly linked list (i.e. last_node)."""
+        new_node = MyDoubleNode(value)
         list_is_empty = self.first_node is None
 
         if list_is_empty:
+            new_node.set_next_node(new_node)
+            new_node.set_previous_node(new_node)
             self.first_node = new_node
             self.last_node = new_node
         else:
+            new_node.set_next_node(self.first_node)
+            new_node.set_previous_node(self.last_node)
             self.last_node.set_next_node(new_node)
             self.last_node = new_node
+            self.first_node.set_previous_node(self.last_node)
 
     def size(
             self
     ):
-        """Returns the size of the linked_list."""
-        size = 0
+        """Returns the size of the circular doubly linked list."""
+        size_of_list = 0
         temp_node = self.first_node
+        not_at_end_of_list = True
+        list_not_empty = self.first_node is not None
 
-        while temp_node is not None:
-            size += 1
+        while not_at_end_of_list and list_not_empty:
+            if temp_node.get_next_node() == self.first_node:
+                not_at_end_of_list = False
+
+            size_of_list += 1
             temp_node = temp_node.get_next_node()
-        return size
+        return size_of_list
 
     def get_node(
             self,
@@ -103,6 +71,11 @@ class MyLinkedList:
         """Returns the node at the specified index."""
         i = 0
         current_node = self.first_node
+        index_exceeds_number_of_elements_in_list = index >= self.size()
+
+        if index_exceeds_number_of_elements_in_list:
+            print("The specified index exceeds the number of elements in this list.")
+            return None
 
         while i < index:
             current_node = current_node.get_next_node()
@@ -114,6 +87,12 @@ class MyLinkedList:
             index
     ):
         """Returns the value from the node at the given index."""
+        index_exceeds_number_of_elements_in_list = index >= self.size()
+
+        if index_exceeds_number_of_elements_in_list:
+            print("The specified index exceeds the number of elements in this list.")
+            return None
+
         value = self.get_node(index).get_value()
         return value
 
@@ -121,29 +100,31 @@ class MyLinkedList:
             self,
             new_node
     ):
-        """Inserts a new node at the beginning of a linked list."""
-        new_node.set_next_node(self.first_node)
-        self.first_node = new_node
+        """Inserts a new node at the beginning of a circular doubly linked list."""
+        list_is_empty = self.size() == 0
+
+        if list_is_empty:
+            self.add(new_node.get_value())
+        else:
+            new_node.set_next_node(self.first_node)
+            new_node.set_previous_node(self.last_node)
+            self.first_node.set_previous_node(new_node)
+            self.last_node.set_next_node(new_node)
+            self.first_node = new_node
 
     def __insert_node_in_middle(
             self,
             new_node,
             index
     ):
-        """Inserts a new node anywhere after the beginning of a linked list."""
+        """Inserts a new node anywhere after the beginning and before the end of a circular doubly linked list."""
         node_before_inserted_node = self.get_node(index - 1)
         node_after_inserted_node = self.get_node(index)
 
         node_before_inserted_node.set_next_node(new_node)
+        node_after_inserted_node.set_previous_node(new_node)
         new_node.set_next_node(node_after_inserted_node)
-
-    def __insert_node_at_end(
-            self,
-            new_node
-    ):
-        """Inserts a node at the end of a linked list and updates 'last_node'."""
-        self.last_node.set_next_node(new_node)
-        self.last_node = new_node
+        new_node.set_previous_node(node_before_inserted_node)
 
     def insert(
             self,
@@ -151,7 +132,7 @@ class MyLinkedList:
             index
     ):
         """Inserts a node containing 'value' at 'node_index'."""
-        new_node = MyNode(value)
+        new_node = MyDoubleNode(value)
         size_of_list = self.size()
         inserting_node_at_start_of_list = index == 0
         inserting_node_in_middle_of_list = (index > 0) and (index < size_of_list)
@@ -162,15 +143,15 @@ class MyLinkedList:
         elif inserting_node_in_middle_of_list:
             self.__insert_node_in_middle(new_node, index)
         elif inserting_node_at_end_of_list:
-            self.__insert_node_at_end(new_node)
+            self.add(value)
         else:
-            print("There is no node of index " + str(index))
+            print("The index specified is out of range.")
 
     def exists(
             self,
             value
     ):
-        """Checks if the specified value is stored anywhere in the linked list."""
+        """Checks if the specified value is stored anywhere in the circular doubly linked list."""
         size_of_list = self.size()
         index = 0
 
@@ -183,32 +164,42 @@ class MyLinkedList:
     def __delete_first_node(
             self
     ):
-        """Deletes the first node in the linked list."""
-        self.first_node = self.get_node(1)
+        """Deletes the first node in the circular doubly linked list."""
+        list_is_size_1 = self.size() == 1
+
+        if list_is_size_1:
+            self.first_node = None
+            self.last_node = None
+        else:
+            self.first_node = self.get_node(1)
+            self.last_node.set_next_node(self.first_node)
+            self.first_node.set_previous_node(self.last_node)
 
     def __delete_node_in_middle(
             self,
             index
     ):
-        """Deletes a node in the middle of the linked list."""
+        """Deletes a node in the middle of the circular doubly linked list."""
         node_after_deleted_node = self.get_node(index + 1)
         node_before_deleted_node = self.get_node(index - 1)
         node_before_deleted_node.set_next_node(node_after_deleted_node)
+        node_after_deleted_node.set_previous_node(node_before_deleted_node)
 
     def __delete_last_node(
             self
     ):
-        """Deletes the last node in the linked list."""
+        """Deletes the last node in the circular doubly linked list."""
         size_of_list = self.size()
         node_before_last_node = self.get_node(size_of_list - 2)
-        node_before_last_node.set_next_node(None)
+        node_before_last_node.set_next_node(self.first_node)
+        self.first_node.set_previous_node(node_before_last_node)
         self.last_node = node_before_last_node
 
     def delete_by_index(
             self,
             index
     ):
-        """Removes the node at the specified index from the linked list."""
+        """Removes the node at the specified index from the circular doubly linked list."""
         last_index = self.size() - 1
         deleting_first_node = index == 0
         deleting_node_in_middle = (index > 0) and (index < last_index)
@@ -221,7 +212,7 @@ class MyLinkedList:
         elif deleting_last_node:
             self.__delete_last_node()
         else:
-            print("There is no node of index " + str(index))
+            print("The index specified is out of range.")
 
     def delete_first_occurrence_of_value(
             self,

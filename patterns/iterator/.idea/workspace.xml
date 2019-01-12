@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4323fea-64f0-4ea5-be2a-f4c4fcd6a4a4" name="Default Changelist" comment="" />
+    <list default="true" id="cd6a4b65-324a-401e-a2c6-d7fae4b87830" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,37 +18,27 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>linked list</find>
-    </findStrings>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/blah.py" />
+        <option value="$PROJECT_DIR$/iterator.py" />
         <option value="$PROJECT_DIR$/asdf.py" />
-        <option value="$PROJECT_DIR$/circular_linked_list.py" />
-        <option value="$PROJECT_DIR$/my_doubly_circular_linked_list.py" />
-        <option value="$PROJECT_DIR$/test_linked_list.py" />
-        <option value="$PROJECT_DIR$/test_doubly_linked_list.py" />
-        <option value="$PROJECT_DIR$/my_circular_linked_list.py" />
-        <option value="$PROJECT_DIR$/my_linked_list.py" />
-        <option value="$PROJECT_DIR$/my_doubly_linked_list.py" />
-        <option value="$PROJECT_DIR$/test_circular_linked_list.py" />
-        <option value="$PROJECT_DIR$/my_circular_doubly_linked_list.py" />
-        <option value="$PROJECT_DIR$/test_circular_doubly_linked_list.py" />
-        <option value="$PROJECT_DIR$/asd.py" />
+        <option value="$PROJECT_DIR$/my_iterator.py" />
+        <option value="$PROJECT_DIR$/test_iterator.py" />
+        <option value="$PROJECT_DIR$/my_linked_list_iterator.py" />
+        <option value="$PROJECT_DIR$/my_doubly_linked_list_iterator.py" />
+        <option value="$PROJECT_DIR$/test_linked_list_iterator.py" />
+        <option value="$PROJECT_DIR$/test_doubly_linked_list_iterator.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1089" />
+    <option name="x" value="950" />
+    <option name="width" value="979" />
+    <option name="height" value="1090" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -56,19 +46,28 @@
         <subPane>
           <expand>
             <path>
-              <item name="linked_lists" type="b2602c69:ProjectViewProjectNode" />
-              <item name="linked_lists" type="462c0819:PsiDirectoryNode" />
+              <item name="patterns" type="b2602c69:ProjectViewProjectNode" />
+              <item name="patterns" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="iterator" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -82,9 +81,30 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_linked_list">
-    <configuration name="my_circular_linked_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linked_lists" />
+  <component name="RunManager" selected="Python.test_doubly_linked_list_iterator">
+    <configuration name="asdf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="patterns" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\smirn\.virtualenvs\patterns\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/asdf.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_iterator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="patterns" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -95,7 +115,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_circular_linked_list.py" />
+      <option name="SCRIPT_NAME" value="C:\work\code\python\my_code\patterns\iterator\my_linked_list_iterator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,8 +124,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_circular_doubly_linked_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linked_lists" />
+    <configuration name="test_doubly_linked_list_iterator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="patterns" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -116,7 +136,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_circular_doubly_linked_list.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_doubly_linked_list_iterator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,8 +145,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_circular_linked_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linked_lists" />
+    <configuration name="test_iterator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="patterns" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -137,7 +157,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_circular_linked_list.py" />
+      <option name="SCRIPT_NAME" value="C:\work\code\python\my_code\patterns\iterator\test_linked_list_iterator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,8 +166,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_doubly_linked_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linked_lists" />
+    <configuration name="test_linked_list_iterator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="patterns" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -158,7 +178,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_doubly_linked_list.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_linked_list_iterator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -167,34 +187,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_linked_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="linked_lists" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_linked_list.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Python.asdf" />
+      <item itemvalue="Python.my_iterator" />
+      <item itemvalue="Python.test_iterator" />
+      <item itemvalue="Python.test_linked_list_iterator" />
+      <item itemvalue="Python.test_doubly_linked_list_iterator" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_linked_list" />
-        <item itemvalue="Python.test_circular_doubly_linked_list" />
-        <item itemvalue="Python.test_circular_linked_list" />
-        <item itemvalue="Python.test_doubly_linked_list" />
-        <item itemvalue="Python.my_circular_linked_list" />
+        <item itemvalue="Python.test_doubly_linked_list_iterator" />
+        <item itemvalue="Python.test_linked_list_iterator" />
+        <item itemvalue="Python.test_iterator" />
+        <item itemvalue="Python.my_iterator" />
+        <item itemvalue="Python.asdf" />
       </list>
     </recent_temporary>
   </component>
@@ -203,31 +209,31 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a4323fea-64f0-4ea5-be2a-f4c4fcd6a4a4" name="Default Changelist" comment="" />
-      <created>1545695422567</created>
+      <changelist id="cd6a4b65-324a-401e-a2c6-d7fae4b87830" name="Default Changelist" comment="" />
+      <created>1546897684521</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1545695422567</updated>
+      <updated>1546897684521</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17785235" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21140939" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32573727" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2077748" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3297587" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3292683" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -236,50 +242,45 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blah.py" />
+    <entry file="file://$PROJECT_DIR$/../data_structures/linked_lists/my_linked_list.py" />
+    <entry file="file://$PROJECT_DIR$/test_linked_list.py" />
     <entry file="file://$PROJECT_DIR$/asdf.py" />
-    <entry file="file://$PROJECT_DIR$/../doubly_linked_lists/my_doubly_linked_list.py" />
-    <entry file="file://$PROJECT_DIR$/my_linked_list.py">
+    <entry file="file://$PROJECT_DIR$/my_doubly_linked_list_iterator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="159" column="43" lean-forward="true" selection-start-line="159" selection-start-column="43" selection-end-line="159" selection-end-column="43" />
+        <state relative-caret-position="136">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_doubly_linked_list.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_linked_list.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="177" column="26" selection-start-line="177" selection-start-column="26" selection-end-line="177" selection-end-column="26" />
+        <state relative-caret-position="-3370" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_doubly_linked_list_iterator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#35#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_doubly_linked_list.py" />
-    <entry file="file://$PROJECT_DIR$/test_circular_linked_list.py" />
-    <entry file="file://$PROJECT_DIR$/test_circular_doubly_linked_list.py" />
-    <entry file="file://$PROJECT_DIR$/my_circular_linked_list.py">
+    <entry file="file://$PROJECT_DIR$/my_linked_list_iterator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="125" column="6" lean-forward="true" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
+        <state relative-caret-position="85">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_linked_list.py">
+    <entry file="file://$PROJECT_DIR$/test_linked_list_iterator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="39" lean-forward="true" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../patterns/test_linked_list.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asd.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_circular_doubly_linked_list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
